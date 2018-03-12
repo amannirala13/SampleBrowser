@@ -1,6 +1,5 @@
 package amansoftdevelopers.com.web
 
-import amansoftdevelopers.com.web.R.id.txtUrl
 import android.annotation.TargetApi
 import android.os.Build
 import android.os.Bundle
