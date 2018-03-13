@@ -14,15 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:ems="8"
-        android:maxLines="1"
+        android:hint="@string/UrlHint"
         android:inputType="textUri"
+        android:maxLines="1"
         tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:text="@string/Go" />
+        android:text="@string/Go"/>
     <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/wv"
         android:layout_width="match_parent"
