@@ -5,22 +5,33 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.webkit.URLUtil
-import kotlinx.android.synthetic.main.activity_main.*
-
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import kotlinx.android.synthetic.main.activity_main.btn
+import kotlinx.android.synthetic.main.activity_main.txtUrl
+import kotlinx.android.synthetic.main.activity_main.wv
 
 class MainActivity : AppCompatActivity() {
+    var myWebView: WebView? = null
 
     @TargetApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        wv.webViewClient
+        myWebView = findViewById(R.id.wv)
+        myWebView!!.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                view?.loadUrl(url)
+                return true
+            }
+        }
+
         btn.setOnClickListener({
             wv.loadUrl(
-                    if(URLUtil.isValidUrl(txtUrl.text.toString()))
-            txtUrl.text.toString()
-            else
-                "http://"+txtUrl.text.toString())
+                    if (URLUtil.isValidUrl(txtUrl.text.toString()))
+                        txtUrl.text.toString()
+                    else
+                        "http://" + txtUrl.text.toString())
 
         })
     }
