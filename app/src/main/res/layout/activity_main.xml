@@ -19,8 +19,6 @@
         android:hint="@string/UrlHint"
         android:inputType="textUri"
         android:maxLines="1"
-        tools:ignore="LabelFor" />
-        android:maxLines="1"
         tools:ignore="LabelFor"
         />
 
