@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.txtUrl
 import kotlinx.android.synthetic.main.activity_main.wv
 
 class MainActivity : AppCompatActivity() {
-    var myWebView: WebView? = null
+    private var myWebView: WebView? = null
 
     @TargetApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         myWebView = findViewById(R.id.wv)
         myWebView!!.webViewClient = object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-                view?.loadUrl(url)
-                return true
-            }
+
         }
 
         btn.setOnClickListener({
